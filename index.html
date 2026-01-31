@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI HACKFEST'26 | Intercollege AI Hackathon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.46/build/spline-viewer.js"></script>
+    <style>
+      :root {
+        --page-gradient: linear-gradient(135deg, #F8F3ED, #EAF3EC);
+        --card-bg: #EAF3EC;
+        --text-heading: #1F2937;
+        --text-body: #475569;
+        --accent: #22D3EE;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--page-gradient);
+        color: var(--text-body);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .retro-grid {
+        display: none;
+      }
+      .glow-overlay {
+        display: none;
+      }
+      .stars {
+        display: none;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F8F3ED;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #22D3EE;
+        border-radius: 10px;
+      }
+      .noise {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow-overlay" id="cursor-glow"></div>
+    <div class="noise"></div>
+    <div id="root"></div>
+    <script>
+      document.addEventListener('mousemove', (e) => {
+        const glow = document.getElementById('cursor-glow');
+        if (glow) {
+          glow.style.setProperty('--x', e.clientX + 'px');
+          glow.style.setProperty('--y', e.clientY + 'px');
+        }
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
